@@ -5,7 +5,7 @@ sudo apt-get install openjdk-8-jdk
 
 cd ..
 source ../devel/setup.bash
-rosdep update --rosdistro indigo
+rosdep update --include-eol-distros
 wstool init .
 wstool merge https://raw.github.com/knowrob/knowrob/indigo/rosinstall/knowrob-base.rosinstall
 wstool update
