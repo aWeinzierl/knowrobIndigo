@@ -1,0 +1,20 @@
+In order to correctly run this package do the following:
+
+1) roscore
+
+2) rosrun rosprolog rosprolog template_tutorial_semantic_env
+
+3)  roslaunch rosbridge_server rosbridge_websocket.launch
+open in your browser-> http://localhost:1111/
+
+* go back to terminal 2 and type:
+	visualisation_server.
+* load the new environment
+	owl_individual_of(A, knowrob:'SemanticEnvironmentMap'), add_object_with_children(A).
+
+* Create new instances on demand
+	create_new_instance('KitchenTable', '2',M).
+	
+* Verify that the instance was correctly asserted
+	rdfs_individual_of(I, semRoom_semantic_map:'KitchenTable').
+ 
