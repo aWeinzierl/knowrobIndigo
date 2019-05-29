@@ -23,3 +23,5 @@ source devel/setup.bash
 # install additional dependencies
 sudo apt-get install ros-indigo-rosbridge-suite
 
+#replace knowrob_maps by knowrob_map_tools and knowrob_map_data from https://github.com/knowrob/knowrob/tree/indigo
+
