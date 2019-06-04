@@ -13,7 +13,8 @@
      xmlns:owl2="http://www.w3.org/2006/12/owl2#"
      xmlns:computable="http://knowrob.org/kb/computable.owl#">
     <owl:Ontology rdf:about="http://knowrob.org/kb/semRoom_semantic_map.owl">
-        <owl:imports rdf:resource="package://knowrob_common/owl/knowrob.owl"/>
+        <owl:imports rdf:resource="http://knowrob.org/kb/knowrob_common.owl"/>
+        <owl:imports rdf:resource="http://knowrob.org/kb/knowrob.owl"/>
     </owl:Ontology>
     
 
@@ -276,6 +277,20 @@
     
 
 
+    <!-- http://knowrob.org/kb/knowrob.owl#Cup -->
+
+    <rdf:Description rdf:about="http://knowrob.org/kb/knowrob.owl#Cup">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/knowrob.owl#storedAtPlace"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/knowrob.owl#Cupboard"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
     <!-- http://knowrob.org/kb/knowrob.owl#Cupboard -->
 
     <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#Cupboard"/>
@@ -309,6 +324,20 @@
     <!-- http://knowrob.org/kb/knowrob.owl#DrinkingBottle -->
 
     <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#DrinkingBottle"/>
+    
+
+
+    <!-- http://knowrob.org/kb/knowrob.owl#DrinkingGlass -->
+
+    <rdf:Description rdf:about="http://knowrob.org/kb/knowrob.owl#DrinkingGlass">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/knowrob.owl#storedAtPlace"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/knowrob.owl#Cupboard"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
     
 
 
@@ -409,6 +438,14 @@
     
 
 
+    <!-- http://knowrob.org/kb/semRoom_semantic_map.owl#Cup1 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/semRoom_semantic_map.owl#Cup1">
+        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Cup"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://knowrob.org/kb/semRoom_semantic_map.owl#SemanticEnvironmentMap2 -->
 
     <owl:NamedIndividual rdf:about="http://knowrob.org/kb/semRoom_semantic_map.owl#SemanticEnvironmentMap2">
@@ -489,13 +526,6 @@
     <owl:NamedIndividual rdf:about="http://knowrob.org/kb/semRoom_semantic_map.owl#timepoint_1271159865.00">
         <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#TimePoint"/>
     </owl:NamedIndividual>
-
-    <!-- http://knowrob.org/kb/semRoom_semantic_map.owl#Cup1 -->
-
-    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/semRoom_semantic_map.owl#Cup1">
-        <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Cup"/>
-    </owl:NamedIndividual>
-
 </rdf:RDF>
 
 

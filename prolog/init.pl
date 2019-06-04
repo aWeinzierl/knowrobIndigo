@@ -20,6 +20,7 @@
 :- register_ros_package(knowrob_map_tools).
 :- register_ros_package(knowrob_map_data).
 :- register_ros_package(knowrob_actions).
+:- register_ros_package(knowrob_common).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % library dependencies

@@ -16,8 +16,8 @@ of the predicates
 :- module(fiad_activityInfer_utils,
     [
 	create_new_instance/3,
-	getClassPath/2,
-	object_hierarchy/2
+	getClassPath/2
+	%%TODO: Include the prolog queries you want to access from the terminal
     ]).
 
 :- rdf_db:rdf_register_ns(semRoom_semantic_map, 'http://knowrob.org/kb/semRoom_semantic_map.owl#', [keep(true)]).
@@ -27,27 +27,6 @@ of the predicates
 %%% Please create here your prolog queries
 %%% to answer the questions from the slides
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-object_hierarchy_internal_none(Child,Parent) :- not(owl_has(Parent, knowrob:properPhysicalParts, Child)).
-
-object_hierarchy_internal(Item, Hierarchy, HierarchyFinal) :-
-    (   object_hierarchy_internal_none(Item, _)
-        ,
-        HierarchyFinal = Hierarchy
-    )
-    ;
-    (    owl_has(Parent, knowrob:properPhysicalParts, Item)
-        ,
-        append(Hierarchy, [Parent], ExtendedHierarchy)
-        ,
-        object_hierarchy_internal(Item, Parent, ExtendedHierarchy, HierarchyFinal)
-    )
-.
-
-object_hierarchy(Item, Hierarchy) :- object_hierarchy_internal(Item, [], Hierarchy).
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %TODO: Properly document your predicates
