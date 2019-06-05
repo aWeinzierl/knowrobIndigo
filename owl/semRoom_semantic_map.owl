@@ -13,7 +13,6 @@
      xmlns:owl2="http://www.w3.org/2006/12/owl2#"
      xmlns:computable="http://knowrob.org/kb/computable.owl#">
     <owl:Ontology rdf:about="http://knowrob.org/kb/semRoom_semantic_map.owl">
-        <owl:imports rdf:resource="http://knowrob.org/kb/knowrob_common.owl"/>
         <owl:imports rdf:resource="http://knowrob.org/kb/knowrob.owl"/>
     </owl:Ontology>
     
@@ -104,6 +103,18 @@
     <!-- http://knowrob.org/kb/knowrob.owl#startTime -->
 
     <owl:ObjectProperty rdf:about="http://knowrob.org/kb/knowrob.owl#startTime"/>
+    
+
+
+    <!-- http://knowrob.org/kb/knowrob.owl#storedAtPlace -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/knowrob.owl#storedAtPlace"/>
+    
+
+
+    <!-- http://knowrob.org/kb/knowrob.owl#typePrimaryFunction-StoragePlaceFor -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/knowrob.owl#typePrimaryFunction-StoragePlaceFor"/>
     
 
 
@@ -279,21 +290,26 @@
 
     <!-- http://knowrob.org/kb/knowrob.owl#Cup -->
 
-    <rdf:Description rdf:about="http://knowrob.org/kb/knowrob.owl#Cup">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://knowrob.org/kb/knowrob.owl#storedAtPlace"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://knowrob.org/kb/knowrob.owl#Cupboard"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </rdf:Description>
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#Cup"/>
     
 
 
     <!-- http://knowrob.org/kb/knowrob.owl#Cupboard -->
 
-    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#Cupboard"/>
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#Cupboard">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/knowrob.owl#typePrimaryFunction-StoragePlaceFor"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/knowrob.owl#Cup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/knowrob.owl#typePrimaryFunction-StoragePlaceFor"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/knowrob.owl#DrinkingGlass"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
@@ -329,7 +345,7 @@
 
     <!-- http://knowrob.org/kb/knowrob.owl#DrinkingGlass -->
 
-    <rdf:Description rdf:about="http://knowrob.org/kb/knowrob.owl#DrinkingGlass">
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#DrinkingGlass">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://knowrob.org/kb/knowrob.owl#storedAtPlace"/>
@@ -337,7 +353,7 @@
                 <owl:onClass rdf:resource="http://knowrob.org/kb/knowrob.owl#Cupboard"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </rdf:Description>
+    </owl:Class>
     
 
 

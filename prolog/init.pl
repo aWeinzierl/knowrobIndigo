@@ -21,6 +21,7 @@
 :- register_ros_package(knowrob_map_data).
 :- register_ros_package(knowrob_actions).
 :- register_ros_package(knowrob_common).
+:- register_ros_package(knowrob_objects).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % library dependencies
@@ -37,7 +38,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % parse OWL files, register name spaces
 :- owl_parser:owl_parse('package://template_tutorial_semantic_env/owl/semRoom_semantic_map.owl').
-
+:- owl_parse('package://knowrob_map_data/owl/ccrl2_semantic_map.owl').
 :- rdf_db:rdf_register_ns(semRoom_semantic_map, 'http://knowrob.org/kb/semRoom_semantic_map.owl#', [keep(true)]).
 
 

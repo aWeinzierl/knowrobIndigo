@@ -8,6 +8,7 @@ find_package(catkin REQUIRED
   knowrob_actions
   knowrob_map_data
   knowrob_map_tools
+  knowrob_common
 )
 
 ## System dependencies are found with CMake's conventions
@@ -82,7 +83,7 @@ find_package(catkin REQUIRED
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES tutorial_semantic_env
-CATKIN_DEPENDS knowrob_actions knowrob_map_data knowrob_map_tools
+CATKIN_DEPENDS knowrob_actions knowrob_map_data knowrob_map_tools knowrob_common
 #  DEPENDS system_lib
 )
 
