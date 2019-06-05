@@ -9,10 +9,15 @@
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:knowrob="http://knowrob.org/kb/knowrob.owl#"
+     xmlns:srdl2-comp="http://knowrob.org/kb/srdl2-comp.owl#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl2="http://www.w3.org/2006/12/owl2#"
      xmlns:computable="http://knowrob.org/kb/computable.owl#">
     <owl:Ontology rdf:about="http://knowrob.org/kb/semRoom_semantic_map.owl">
+        <owl:imports rdf:resource="http://knowrob.org/kb/knowrob_objects.owl"/>
+        <owl:imports rdf:resource="http://knowrob.org/kb/semRoom_semantic_map.owl"/>
+        <owl:imports rdf:resource="http://knowrob.org/kb/ccrl2_semantic_map.owl#"/>
+        <owl:imports rdf:resource="http://knowrob.org/kb/knowrob_common.owl"/>
         <owl:imports rdf:resource="http://knowrob.org/kb/knowrob.owl"/>
     </owl:Ontology>
     
@@ -333,7 +338,14 @@
 
     <!-- http://knowrob.org/kb/knowrob.owl#Drawer -->
 
-    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#Drawer"/>
+    <owl:Class rdf:about="http://knowrob.org/kb/knowrob.owl#Drawer">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://knowrob.org/kb/knowrob.owl#typePrimaryFunction-StoragePlaceFor"/>
+                <owl:someValuesFrom rdf:resource="http://knowrob.org/kb/knowrob.owl#Knife"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
@@ -458,6 +470,7 @@
 
     <owl:NamedIndividual rdf:about="http://knowrob.org/kb/semRoom_semantic_map.owl#Cup1">
         <rdf:type rdf:resource="http://knowrob.org/kb/knowrob.owl#Cup"/>
+        <knowrob:locatedAt rdf:resource="http://knowrob.org/kb/knowrob.owl#Door10"/>
     </owl:NamedIndividual>
     
 
